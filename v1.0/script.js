@@ -1,5 +1,6 @@
 
 
+
 const editor = document.querySelector('.textArea');
 
 const wordOutput = document.getElementById('wordCounter');
@@ -297,3 +298,5 @@ function cFunction() {
 function dFunction() {
   document.querySelector(".textArea").style.textAlign = "justify"; // ⬇️
 }
+
+

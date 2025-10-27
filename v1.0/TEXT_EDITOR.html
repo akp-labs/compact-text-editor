@@ -6,24 +6,27 @@
   <title>TEXT EDITOR</title>
   <style>
     body {
-      position: relative;
-      height: auto;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
       font-family: Arial, sans-serif;
-      padding: 5px;
-      min-height: 95vh;
-      overflow-y: scroll;
-      scrollbar-width: 0px;
-      -ms-overflow-style: none;
-      -webkit-overflow-scrolling: touch;
-      margin: 0 0;
-      height: 100vh;
-      width:100vw;
-      overflow-x: hidden;
-      overflow-y: hidden;
+      background: #fff;
+      overflow: hidden; /* Hide both axes by default */
     }
 
-    body::-webkit-scrollbar {
-      display: none;
+    /* If you later want to allow vertical scroll: 
+       just switch to overflow-y: auto; 
+       and add scrollbar hiding below. */
+       
+    /* Optional scrollbar hiding (browser-compatible) */
+    ::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     h1 {
@@ -36,7 +39,7 @@
       resize: none;
       width: 60vw;
       max-width: 800px;
-      height: 40vh;
+      height: 50vh;
       margin: 10px;
       padding: 5vw;
       font-size: large;
@@ -223,14 +226,14 @@
 
   <div class="formatTab">Format Tab</div>
   <div class="formatBtns">
-    <button onclick="formatTextGeneric('b')" class="class"><b>A</b></button>
-    <button onclick="formatTextGeneric('i')" class="class"><i>A</i></button>
-    <button onclick="formatTextGeneric('code')" class="class"><code>A</code></button>
-    <button onclick="formatTextGeneric('u')" class="class"><u>A</u></button>
-    <button onclick="formatTextGeneric('sup')" class="class"><span class="sup-fake">A</span></button>
-    <button onclick="formatTextGeneric('sub')" class="class"><sub>A</sub></button>
-    <button onclick="formatTextGeneric('s')" class="class"><s>A</s></button>
-    <button onclick="formatTextGeneric('mark')" class="class"><mark>A</mark></button>
+    <button type="button" onclick="formatTextGeneric('b')" class="class"><b>A</b></button>
+    <button type="button" onclick="formatTextGeneric('i')" class="class"><i>A</i></button>
+    <button type="button" onclick="formatTextGeneric('code')" class="class"><code>A</code></button>
+    <button type="button" onclick="formatTextGeneric('u')" class="class"><u>A</u></button>
+    <button type="button" onclick="formatTextGeneric('sup')" class="class"><span class="sup-fake">A</span></button>
+    <button type="button" onclick="formatTextGeneric('sub')" class="class"><sub>A</sub></button>
+    <button type="button" onclick="formatTextGeneric('s')" class="class"><s>A</s></button>
+    <button type="button" onclick="formatTextGeneric('mark')" class="class"><mark>A</mark></button>
   </div>
 
   <div contenteditable="True" class="textArea"></div>
@@ -240,10 +243,10 @@
     <button class="textNavBtns" type="button" onclick="bFunction()">⬅️</button>
     <button class="textNavBtns" type="button" onclick="cFunction()">⬆️</button>
     <button class="textNavBtns" type="button" onclick="dFunction()">⬇️</button>
-    <button onclick="lb()" class="textNavBtns">↩️</button>
-    <button onclick="backSpaceFun()" class="textNavBtns">⌫</button>
-    <button onclick="clearFormatting()" type="button" class="textNavBtns">✖️</button>
-    <button onclick="clearEverything()" type="button" class="textNavBtns">❌</button>
+    <button type="button" onclick="lb()" class="textNavBtns">↩️</button>
+    <button type="button" onclick="backSpaceFun()" class="textNavBtns">⌫</button>
+    <button type="button" onclick="clearFormatting()" class="textNavBtns">✖️</button>
+    <button type="button" onclick="clearEverything()" class="textNavBtns">❌</button>
   </div>
 
   <div class="textNavBar">
